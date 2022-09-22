@@ -1,0 +1,874 @@
+@import url('reset.css');
+
+/* Add the Google Fonts you want, remove the ones you don't. 
+███████  ██████  ███    ██ ████████ ███████ 
+██      ██    ██ ████   ██    ██    ██      
+█████   ██    ██ ██ ██  ██    ██    ███████ 
+██      ██    ██ ██  ██ ██    ██         ██ 
+██       ██████  ██   ████    ██    ███████          
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Gothic+A1:wght@100;200;300;400&display=swap');
+
+/*
+
+X-Small devices (portrait phones, less than 576px) 
+No media query for `xs` since this is the default in Bootstrap 
+This was kept for later development:
+███    ███  ██████  ██████  ██ ██      ███████     ███████ ██ ██████  ███████ ████████ 
+████  ████ ██    ██ ██   ██ ██ ██      ██          ██      ██ ██   ██ ██         ██    
+██ ████ ██ ██    ██ ██████  ██ ██      █████       █████   ██ ██████  ███████    ██    
+██  ██  ██ ██    ██ ██   ██ ██ ██      ██          ██      ██ ██   ██      ██    ██    
+██      ██  ██████  ██████  ██ ███████ ███████     ██      ██ ██   ██ ███████    ██ 
+                                                                                
+*/
+
+
+/* Add Border Box and Smooth Scroll */
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  cursor: url('/cursor.svg'), auto !important;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Use variable for to easily change your theme's colour scheme and typography.
+██    ██  █████  ██████  ██  █████  ██████  ██      ███████ ███████ 
+██    ██ ██   ██ ██   ██ ██ ██   ██ ██   ██ ██      ██      ██      
+██    ██ ███████ ██████  ██ ███████ ██████  ██      █████   ███████ 
+ ██  ██  ██   ██ ██   ██ ██ ██   ██ ██   ██ ██      ██           ██ 
+  ████   ██   ██ ██   ██ ██ ██   ██ ██████  ███████ ███████ ███████ 
+
+*/
+
+:root {
+  --primary-text-color: #fff;
+  --accent-color: rgb(62, 151, 235);
+  --hyperlink-color: rgb(255, 255, 255);
+  --hyperlink-alternate-color: rgb(108, 201, 255);
+  --white: #FFFFFF;
+  --black: #000000;
+  --cgblue: #007696;
+  --prussianblue: #002641;
+  --oxfordblue: #001630;
+  --darkoxford: #000E24;
+  --hover-color: #007696;
+  --body-typeface: "Gothic A1", sans-serif;
+  --heading-typeface: "Gothic A1", sans-serif;
+  --text-selection-background-color: #002641;
+  --alt-background-color: #000000;
+  --base-color: 0;
+  --color-lightest: hsla(var(--base-color), 1%, 85%, 100%);
+  --color-light: hsla(var(--base-color), 1%, 75%, 100%);
+  --color-normal: hsla(var(--base-color), 1%, 50%, 100%);
+  --color-dark: hsla(var(--base-color), 1%, 35%, 100%);
+  --color-darkest: hsla(var(--base-color), 1%, 15%, 100%);
+}
+
+body {
+  font-family: var(--body-typeface);
+  font-weight: 100;
+  color: var(--primary-text-color);
+  background: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+::selection { background: var(--cgblue); }
+
+/* Making all images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+  /* Removes the gap/space in inline elements for text descenders. */
+  object-fit: cover;
+  /* This is optional. Also try cover or leave out entirely. */
+
+}
+
+/* Global & Mobile Typography 
+████████ ██    ██ ██████   ██████   ██████  ██████   █████  ██████  ██   ██ ██    ██ 
+   ██     ██  ██  ██   ██ ██    ██ ██       ██   ██ ██   ██ ██   ██ ██   ██  ██  ██  
+   ██      ████   ██████  ██    ██ ██   ███ ██████  ███████ ██████  ███████   ████   
+   ██       ██    ██      ██    ██ ██    ██ ██   ██ ██   ██ ██      ██   ██    ██    
+   ██       ██    ██       ██████   ██████  ██   ██ ██   ██ ██      ██   ██    ██   
+
+*/
+
+body {
+
+  font-family: var(--body-typeface);
+  font-weight: 100;
+  color: var(--primary-text-color);
+  display: flex;
+  flex-direction: column;
+  font-weight: 100;
+  line-height: 1.3;
+  color: var(--white);
+  /* text-shadow: 0.1rem 0.05rem 1rem var(--white); */
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+a {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--white);
+  text-decoration: none;
+}
+
+h1 {
+  font-weight: 100;
+  margin-top: 0;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+
+h2 {
+  font-weight: 100;
+  font-size: 1.2rem;
+}
+
+h3, h4, h5, h6 {
+  font-weight: 400;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--white);
+}
+
+small, .text_small {font-size: 0.8rem;}
+
+/* Hyperlink Styles */
+a {
+  text-decoration: none;
+  color: var(--hyperlink-color);
+}
+
+a:hover {
+  color: var(--hover-color);
+
+}
+
+a:active {
+  color: var(--hover-color);
+  /* Tap on mobile */
+}
+.navigation-arrow {color: var(--white);}
+
+.colored-link {color: var(--hyperlink-alternate-color);}
+
+.custom-navigation {
+  margin: 0.3rem 1rem;
+  border: solid var(--white) 1px;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  transition: 0.5s;
+}
+
+.custom-navigation:hover {
+  margin: 0.3rem 1rem;
+  border: solid var(--white) 1px;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  color: var(--white);
+  transition: 0.5s;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+p {
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+/* Index and Error Page Layout
+██ ███    ██ ██████  ███████ ██   ██     ██ ███████ ██████  ██████   ██████  ██████  
+██ ████   ██ ██   ██ ██       ██ ██     ██  ██      ██   ██ ██   ██ ██    ██ ██   ██ 
+██ ██ ██  ██ ██   ██ █████     ███     ██   █████   ██████  ██████  ██    ██ ██████  
+██ ██  ██ ██ ██   ██ ██       ██ ██   ██    ██      ██   ██ ██   ██ ██    ██ ██   ██ 
+██ ██   ████ ██████  ███████ ██   ██ ██     ███████ ██   ██ ██   ██  ██████  ██   ██ 
+                                                                                     
+*/
+
+.ihtml   {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--oxfordblue);
+  background-image: url(/background.png);
+  background-size: cover;
+  background-attachment: scroll;
+/* bubble background set */
+  padding:0;
+  margin:0;
+  min-height:100%;
+}
+
+.ihtml * { z-index: 1; position:relative; }
+#bubbleContainer {
+	z-index:0;
+	overflow:hidden;
+	position:fixed;
+	height:100%;
+	width:100%;
+}
+#bubbleContainer div {
+	position:fixed;
+	z-index:-1;
+	border-radius:1000px;
+}
+
+.iihtml   {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--oxfordblue);
+  background-image: url(/background.png);
+  background-size: cover;
+  background-attachment: scroll;
+/* bubble background set */
+  margin: 16rem;
+  min-height:100%;
+}
+
+.iihtml * { z-index: 1; position:relative; }
+#bubbleContainer {
+	z-index:0;
+	overflow:hidden;
+	position:fixed;
+	height:100%;
+	width:100%;
+}
+#bubbleContainer div {
+	position:fixed;
+	z-index:-1;
+	border-radius:1000px;
+}
+
+.iicon {
+  background-image: url(/dbw.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 4rem;
+  margin: -1rem;
+  color: transparent;
+}
+
+.imain {
+    z-index: 2;
+    display: flex;
+    flex: 1;
+    flex-flow: column;
+    flex-wrap: wrap;
+    margin: auto;
+    padding-top: 9%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ifooter {
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  margin: auto;
+  padding-bottom: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.ilinks {
+  display: flex;
+  flex: 1;
+  flex-flow: row;
+  margin: 0rem 2rem 2rem 2rem;
+  justify-content: space-between;
+}
+
+.iitem {
+  margin: 0.3rem 1rem;
+  border: solid var(--white) 1px;
+  border-radius: 1rem;
+  padding: 0rem 1rem;
+  color: var(--white);
+  transition: 0.5s;
+}
+
+.iitem:hover {
+padding: 0rem 1.2rem;
+  transition: 0.5s;
+}
+
+.iitem:hover {
+  padding: 0rem 1.2rem;
+    transition: 0.5s;
+  }
+
+.ipreviews {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5rem;
+}
+
+.ipic1 {
+  background-image: url(/assets/david-ey-bautista_solacesquare.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 5rem;
+  margin: 0.7rem;
+  border: solid var(--white) 0.5px;
+  border-radius: 0.5rem;
+}
+
+.ipic2 {
+  background-image: url(/assets/david-ey-bautista_realmsquare.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 5rem;
+  margin: 0.7rem;
+  border: solid var(--white) 0.5px;
+  border-radius: 0.5rem;
+}
+
+.ipic3 {
+  background-image: url(/assets/david-ey-bautista_moasquare.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 5rem;
+  margin: 0.7rem;
+  border: solid var(--white) 0.5px;
+  border-radius: 0.5rem;
+}
+
+.ipic4 {
+  background-image: url(/assets/david-ey-bautista_shousquare.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 5rem;
+  margin: 0.7rem;
+  border: solid var(--white) 0.5px;
+  border-radius: 0.5rem;
+}
+
+/* Work Page Layout
+██     ██  ██████  ██████  ██   ██ ██████   █████   ██████  ███████ 
+██     ██ ██    ██ ██   ██ ██  ██  ██   ██ ██   ██ ██       ██      
+██  █  ██ ██    ██ ██████  █████   ██████  ███████ ██   ███ █████   
+██ ███ ██ ██    ██ ██   ██ ██  ██  ██      ██   ██ ██    ██ ██      
+ ███ ███   ██████  ██   ██ ██   ██ ██      ██   ██  ██████  ███████ 
+                                                                                   
+*/
+
+.work-wrapper {
+  z-index: 1;
+  flex: 1;
+  background:  var(--darkoxford);
+}
+
+/* Padding around work grid and project page */
+.portfolio, .project-wrapper {
+  background-color: var(--darkoxford) ;
+  padding: 0rem
+}
+
+/* Defining the work page grid */
+.grid {
+  display: grid;
+  grid-template-columns: 0fr, 0fr;
+  grid-gap: 0rem;
+  /* Magical, media-query-less responsiveness is achieved using the repeat() function and the auto placement keywords. To achieve wrapping, we can use the auto-fit. If you're using auto-fit, the content will stretch to fill the entire row width.  Specify a minimum width for the columns, using the minmax() function. The 1fr is what tells the browser to distribute the space between the columns so that each column equally gets one fraction of that space.  */
+}
+
+/* Optional – Sizing the work page images */
+figure {
+  max-height: 350px;
+  object-fit: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin: 4rem 5rem 3rem 5rem;
+  border: 0;
+  border-bottom: solid var(--white) 1px;
+}
+
+.centeredfoot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin: 4rem 5rem 0rem 5rem;
+  border: 0;
+  border-bottom: solid var(--white) 1px;
+}
+
+/* Hero 
+
+██   ██ ███████ ██████   ██████  
+██   ██ ██      ██   ██ ██    ██ 
+███████ █████   ██████  ██    ██ 
+██   ██ ██      ██   ██ ██    ██ 
+██   ██ ███████ ██   ██  ██████  
+                                 
+*/
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--oxfordblue);
+  background-image: url(/background.png);
+  background-size: cover;
+  background-attachment: scroll;
+/* bubble background set */
+  padding:0;
+  margin:0;
+}
+
+hero * { z-index: 1; position:relative; }
+#bubbleContainer {
+ z-index:0;
+ overflow:hidden;
+ position:fixed;
+ height:100%;
+ width:100%;
+}
+#bubbleContainer div {
+ position:fixed;
+ z-index:-2;
+ border-radius:1000px;
+}
+
+.branding-navigation {
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1.5rem;
+  align-items: center;
+}
+
+.logo {
+  align-self: start;
+  min-width: 2rem;
+  min-height: 2rem;
+  max-width: 4rem;
+  max-height: 4rem;
+  margin: 0rem 2rem;
+  ;
+}
+
+.null {
+flex-wrap: wrap;
+margin-right: 10%;
+}
+
+.hero-headline-wrapper {
+  display: flex;
+  flex-direction: column;  
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 4rem;
+  text-align: center;
+}
+
+.hero-icon {font-size: 2rem;}
+
+.hero-header {
+z-index: 2;
+position: fixed;
+width: 100%;
+display:  flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-items: row;
+background: var(--darkoxford);
+}
+
+.hero-footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.hero-footer-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+/* This part isn't required */
+
+/* .projects {
+  background: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+} */
+
+
+/* Global Footer
+
+███████  ██████   ██████  ████████ ███████ ██████  
+██      ██    ██ ██    ██    ██    ██      ██   ██ 
+█████   ██    ██ ██    ██    ██    █████   ██████  
+██      ██    ██ ██    ██    ██    ██      ██   ██ 
+██       ██████   ██████     ██    ███████ ██   ██ 
+                                                   
+*/
+
+
+
+
+.global-footer, .about {
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  min-height: 50vh;
+  background: var(--darkoxford);  
+}
+
+.footer-item-1, .about-item-1 {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;  
+  justify-self: center;
+  padding: 2rem 2rem 3rem 3rem;
+  margin: 2rem;
+  max-width: 70rem;
+  align-self: center;
+  border: solid var(--white) 1px;
+  border-radius: 4rem;
+}
+
+.footer-item-1_2 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3; 
+  justify-self: flex-end;
+  padding: 2rem 2rem 3rem 3rem;
+  margin: 2rem;
+  max-width: 80rem;
+  align-self: auto;
+  justify-self: auto;
+  border: solid var(--white) 1px;
+  border-radius: 4rem;  
+}
+
+.footer-item-2, .about-item-2 {
+  grid-column: 3 / 3;
+  grid-row: 2 / 3;    
+  justify-self: center;
+  align-self: flex-end;
+  text-align: center;
+  }
+
+  .button{
+  border: solid var(--white) 1px;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  transition: 0.5s;
+  }
+
+  .button:hover {
+    margin: 1rem 1rem;
+    border: solid var(--white) 1px;
+    border-radius: 2rem;
+    padding: 1.5rem 3rem;
+    color: var(--white);
+    transition: 0.5s;
+    font-size: 1.2em;
+    font-weight: 400;
+  }
+
+  .avatar {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 40%;
+    min-height: 40%;
+    max-width: 40%;
+    max-height: 40%;
+    border: solid var(--white) 1px;
+    border-radius: 10rem;
+    pointer-events: none;
+  }
+
+/* Project Page 
+
+██████  ██████   ██████       ██ ███████  ██████ ████████     ██████   █████   ██████  ███████ 
+██   ██ ██   ██ ██    ██      ██ ██      ██         ██        ██   ██ ██   ██ ██       ██      
+██████  ██████  ██    ██      ██ █████   ██         ██        ██████  ███████ ██   ███ █████   
+██      ██   ██ ██    ██ ██   ██ ██      ██         ██        ██      ██   ██ ██    ██ ██      
+██      ██   ██  ██████   █████  ███████  ██████    ██        ██      ██   ██  ██████  ███████ 
+                                                                                               
+*/
+
+.headerimg {
+  /* min-height: 80vh; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background: var(--black);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  pointer-events: none;
+}
+
+.project-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--alt-background-color);
+}
+
+/* Sidebar */
+.project-aside {
+  width: 100%;
+  color: white;
+  background: var(--black);
+  padding: 4rem;
+  padding-top: 6rem;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.project-navigation {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0rem 5rem;
+}
+
+.arrow {
+  padding-right: 1rem;
+}
+
+.project-image {
+  object-fit: contain;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 10rem;
+  padding-right: 5rem;
+  margin-bottom: -10rem;
+  pointer-events: none;
+}
+
+.imgborder {
+border: solid var(--white) 1px;
+border-radius: 1rem;
+}
+
+/* Main Project Image Area */
+.project-details {
+  width: auto;
+  height: auto;
+  background: var(--black);
+  padding: 1rem;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+}
+
+.project-video {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.project-video::after {
+  display:block;
+  content: "";
+  padding-top: 56.25%;
+}
+
+.project-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 95%;
+  height: 95%;
+  border: solid var(--white) 1px;
+  border-radius: 1rem;
+}
+
+/*
+
+ ██████  ███    ███ ███████ ██████   █████  
+██    ██ ████  ████ ██      ██   ██ ██   ██ 
+██ ██ ██ ██ ████ ██ █████   ██   ██ ███████ 
+██ ██ ██ ██  ██  ██ ██      ██   ██ ██   ██ 
+ █ ████  ██      ██ ███████ ██████  ██   ██ 
+                                            
+                                           
+*/
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  body {
+    background: var(--color-darkest);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  body {
+    background: var(--color-dark);
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  body {
+    background: var(--color-normal);
+  }
+
+h1    {font-size: 4.275rem;
+  }
+
+h2 {
+    font-size: 2.5rem;
+  }
+  
+h3 {
+    font-size: 1.625rem;
+  }
+
+
+
+
+  .logo {
+    width: 5rem;
+  }
+  .hero {
+    min-height: 100vh;}
+
+  .hero-headline-wrapper {
+    padding: 4rem 8rem;
+  }
+
+  .grid {
+    /* grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
+    grid-template-columns: repeat(2, 1fr); 
+    grid-gap: 0rem;
+  }
+
+.textbox {
+  padding: 4em;
+  align-items: center;
+  justify-items: center;
+}
+
+/* Grayscale filter with full-colour on hover and tap */
+.work-page-grid-item a img {
+  filter: grayscale(100);
+}
+
+.work-page-grid-item > a:hover img, .work-page-grid-item > a:active img {
+  filter: grayscale(0);
+}
+
+
+.global-footer, .about {
+  padding: 4rem 4rem;  
+  grid-template-columns: 1fr 2fr;
+}
+
+.footer-item-1, .about-item-1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;  
+}
+
+.footer-item-2, .about-item-2 {
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+}
+
+/* Padding around work grid and project page */
+.portfolio, .project-wrapper {
+  padding: .5rem
+}
+
+  /* Project Page Flex Direction on Large Devices */
+  .project-wrapper {
+    flex-direction: row;
+
+  }
+
+
+  /* Sidebar on Large Devices */
+  .project-aside {
+    width: 35vw;
+    height: 50vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5vh;
+  }
+
+
+  /* Main Project Image Area on Large Devices */
+  .project-details {
+    width: 65vw;
+  }
+
+
+  .project-image {
+    min-height: 100vh;
+  }
+
+
+
+
+  /* X-Large devices (large desktops, 1200px and up)*/
+  @media (min-width: 1200px) {
+    body {
+      background: var(--color-light);
+    }
+  }
+
+  /* XX-Large devices (larger desktops, 1400px and up) */
+  @media (min-width: 1400px) {
+    body {
+      background: var(--color-lightest);
+    }
+  }
+}
