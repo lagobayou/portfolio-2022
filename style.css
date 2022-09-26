@@ -9,6 +9,7 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Gothic+A1:wght@100;200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
 @import url('make-something-fly.css');
 @import url('animated-gradient.css');
 @import url('xtext-stroke.css');
@@ -58,14 +59,14 @@ html {
   --hyperlink-alternate-color: rgb(108, 201, 255);
   --hover-color: #007696;
   --body-typeface: "Gothic A1", sans-serif;
-  --heading-typeface: "Gothic A1", sans-serif;
+  --heading-typeface: "Unica One", sans-serif;
   --off-white: #f8f8ff;
   --cgblue: #007696;
   --prussianblue: #002641;
   --oxfordblue: #001630;
   --darkoxford: #000E24;
-  --background-color: black;
-  --alt-background-color: black;
+  --background-color: var(--darkoxford);
+  --alt-background-color: var(--darkoxford);
   --text-selection-background-color: #FFFFFF;
   --base-color: 0;
   --color-lightest: hsla(var(--base-color), 1%, 85%, 100%);
@@ -79,6 +80,7 @@ html {
 body {
   font-family: var(--body-typeface);
   font-weight: 100;
+  font-size: 1.1rem;
   color: var(--primary-text-color);
   background: var(--background-color);
   display: flex;
@@ -116,6 +118,7 @@ img {
 h1 {
   font-size: 2rem;
   font-family: var(--heading-typeface);
+  font-weight: 200;
   margin-bottom: 1rem;
   color: white;
 }
@@ -154,9 +157,9 @@ a:active {
 }
 
 .navigation-arrow:link {
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: white;
-  color: transparent;
+  /* -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white; */
+  color: white;
 }
 
 .navigation-arrow:active,
@@ -170,6 +173,13 @@ a:active {
   color: var(--hyperlink-alternate-color);
 }
 
+.custom-navigation {
+  padding: 0.6rem 2rem;
+  border: white .1rem;
+  border-style: groove;
+  border-radius: 6rem;
+}
+
 .custom-navigation:hover {
   background: url(heading-background.svg);
   background-size: 15%;
@@ -179,7 +189,7 @@ a:active {
 
 
 p {
-  line-height: 1.3;
+  line-height: 1.4;
   margin-bottom: 1rem;
 }
 
@@ -197,6 +207,7 @@ p {
 
 .work-wrapper {
   flex: 1;
+  background-color: var(--darkoxford);
 }
 
 /* Padding around work grid and project page */
@@ -238,10 +249,14 @@ figure {
   min-height: 80vh;
   display: flex;
   flex-direction: column;
-  /* background: rgb(238, 174, 202);
+  background: var(--oxfordblue);
   background: radial-gradient(circle,
-      rgba(238, 174, 202, 1) 0%,
-      rgba(148, 187, 233, 1) 100%); */
+      var(--oxfordblue) 0%,
+      var(--darkoxford) 50%);
+}
+
+.hero-header {
+  background: var(--darkoxford);
 }
 
 .branding-navigation {
@@ -283,7 +298,7 @@ figure {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 /* This part isn't required */
@@ -315,7 +330,7 @@ figure {
   grid-template-columns: 1fr;
   grid-gap: 3rem;
   min-height: 100vh;
-  background: black;
+  background: var(--darkoxford);
   padding: 1rem 1rem;
 }
 
@@ -343,6 +358,14 @@ figure {
   grid-row: 4 / 5;
 }
 
+.social-item {
+  padding: 0.6rem;
+  margin: 1rem;
+  border: white .1rem;
+  border-style: groove;
+  border-radius: 6rem;
+}
+
 /* Project Page 
 
 ██████  ██████   ██████       ██ ███████  ██████ ████████     ██████   █████   ██████  ███████ 
@@ -364,7 +387,7 @@ figure {
 .project-aside {
   width: 100%;
   color: white;
-  background: orangered;
+  background: var(--darkoxford);
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -383,7 +406,7 @@ figure {
 
 .project-image {
   font-size: 12rem;
-  min-height: 50vh;
+  /* min-height: 50vh; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -397,11 +420,12 @@ figure {
 /* Main Project Image Area */
 .project-details {
   width: 100%;
-  background-image: linear-gradient(-225deg,
-      #ff057c 0%,
-      #8d0b93 50%,
-      #321575 100%);
-  padding: 1rem;
+  background-color: black;
+  /* background-image: linear-gradient(-225deg,
+      var(--prussianblue) 0%,
+      var(--oxfordblue) 50%,
+      var(--darkoxford) 90%); */
+  /* padding: 1rem; */
 }
 
 
@@ -562,9 +586,9 @@ figure {
   }
 
 
-  .project-image {
+  /* .project-image {
     min-height: 100vh;
-  }
+  } */
 
 
 
